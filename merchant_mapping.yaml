@@ -1,0 +1,243 @@
+# merchant_mapping.yaml
+#
+# Mapping reel -> fictif pour anonymiser un export CSV de carte de credit.
+# Couvre les 163 marchands uniques presents dans site/data/data1.csv.
+#
+# Style des noms fictifs : melange Turc, Malaisien, US (anglais).
+# Regle : un marchand reel a UN seul remplacant, et toujours le meme.
+# Si Tim Hortons apparait 106 fois en source, Coffee Gossip apparait 106 fois en sortie.
+#
+# Le bloc `headers` corrige les en-tetes du fichier (accents francais).
+# Le bloc `categories` corrige les categories (accents francais aussi).
+
+# -----------------------------------------------------------------------------
+# Headers : accents francais corrects
+# -----------------------------------------------------------------------------
+headers:
+  "Categorie": "Catégorie"
+  "Numero de Carte": "Numéro de Carte"
+
+# -----------------------------------------------------------------------------
+# Categories : accents francais corrects (les autres restent identiques)
+# -----------------------------------------------------------------------------
+categories:
+  "Electroniques et logiciels": "Électroniques et logiciels"
+  "Epicerie": "Épicerie"
+  "Cafes": "Cafés"
+  "Hebergement web": "Hébergement web"
+  "Vetements": "Vêtements"
+  "Salle d'entrainement": "Salle d'entraînement"
+  "Renovations": "Rénovations"
+  "Education": "Éducation"
+  "Hotel": "Hôtel"
+  "Publicite": "Publicité"
+  "Optometriste": "Optométriste"
+  "Paiement carte de credit": "Paiement carte de crédit"
+
+# -----------------------------------------------------------------------------
+# Merchants : noms reels -> noms fictifs (Turc / Malais / US)
+# -----------------------------------------------------------------------------
+merchants:
+  # Cafes ------------------------------------------------------------
+  "Tim Hortons": "Coffee Gossip"            # US, 106 occurrences
+  "Starbucks": "Bean Atlas"                 # Turc (Atlas) , 8x
+  "Caribou Coffee": "Reindeer Roast"        # US, 2x
+  "Second Cup Coffee Co": "Twin Cup Coffee Co"  # US, 3x
+  "Dunkin'": "Mocha Maven"                  # US, 1x
+  "Cafe Leo": "Café Aslan"                  # Turc (aslan = lion), 5x
+  "Cafe Depot": "Café Pertama"              # Malais (pertama = premier), 1x
+
+  # Restauration rapide / restaurants -------------------------------
+  "Chartwells": "Campus Plate"              # US, 16x
+  "Tutti Frutti": "Mango Selera"            # Malais (selera = appetit), 3x
+  "McDonald's": "Burger Atlas"              # Turc (Atlas), 3x
+  "Mucho Burrito": "Spicy Sahibi"           # Turc (sahibi = proprietaire), 1x
+  "SH Vending": "Snack Sultanate"           # Multi, 1x
+  "Yul Uppercrust": "Crust Royale"          # US, 1x
+  "Le Meilleur": "Top Choice Bistro"        # US, 1x
+  "Villa Fresh Itali": "Villa Bahari"       # Malais (bahari = ocean), 1x
+  "Amk Concessions": "Stadium Snacks"       # US, 2x
+  "Mccafe Adm": "QuickCafe Adm"             # US, 1x
+  "Amigos St Denis": "Sahabat Tapas St Denis"        # Malais (sahabat = ami), 4x
+  "Amigos Boucherville": "Sahabat Tapas Boucherville"  # Malais, 1x
+  "Joe's Panini": "Mehmet's Panini"         # Turc (Mehmet = prenom), 1x
+  "Vieux Port Steakhouse": "Old Harbor Steakhouse"   # US, 1x
+  "Enoteca Monza": "Trattoria Yildiz"       # Turc (yildiz = etoile), 1x
+  "Basha Restaurant Uqam": "Pasha Bistro Uqam"       # Turc (Pasha), 1x
+  "Patisserie L Olivier": "Zeytin Bakery"   # Turc (zeytin = olive), 1x
+
+  # Restaurants Dubai / Abu Dhabi -----------------------------------
+  "Talabat Dubai Are": "QuickServe Dubai Are"        # US, 24x
+  "Eggspectation Restaurant Dubai Are": "Sunny Side Dubai Are"  # US, 1x
+  "Gazebo Restaurant Dubai Are": "Pavilion Bistro Dubai Are"    # US, 1x
+  "The Lounge Dubai Are": "The Salon Dubai Are"      # US, 1x
+  "Awani Dubai Are": "Aurora Dubai Are"     # US, 1x
+  "Mamaesh Dubai Are": "Manakish House Dubai Are"    # Multi (kept manakish), 1x
+  "Vespare Italian Street Dubai Are": "Bella Sokak Dubai Are"   # Turc (sokak = rue), 1x
+  "Punch Sports Restaurant Abu Dhabi Are": "Champion Sports Abu Dhabi Are"  # US, 2x
+  "Alshaya Cheesecake D Abu Dhabi Are": "Sweet Slice Abu Dhabi Are"  # US, 1x
+  "Paul Dubai Are": "Boulanger Dubai Are"   # Multi, 1x
+  "Emirates Leis New Mead Dubai Are": "Skyline Lounge New Mead Dubai Are"  # US, 1x
+  "Emirates Leis Conc Dubai Are": "Skyline Lounge Conc Dubai Are"  # US, 1x
+  "Elr Costa Dubai Hills Are": "Grano Costa Dubai Hills Are"  # US, 1x
+  "Home Bakery Kitchen Dubai Are": "Hearth Bakery Kitchen Dubai Are"  # US, 1x
+
+  # Restaurants Tunisie ---------------------------------------------
+  "Newrest Retail Tunis Tun": "QuickStop Tunis Tun"  # US, 1x
+  "Ste Le Fournil Tunisie Sous Douane a Tun": "Halal Bakery Tunis Tun"  # Multi, 1x
+
+  # Epicerie --------------------------------------------------------
+  "Metro": "MegaMart Express"               # US, 9x
+  "Safeway": "Safe Stop Foods"              # US, 2x
+  "Marche Hauptman": "Pasar Pagi"           # Malais (pasar pagi = marche du matin), 1x
+  "Carrefour Market Dubai Are": "Crossroads Market Dubai Are"  # US, 1x
+  "Fix Conb Dubai Are": "Quick Pantry Dubai Are"     # US, 1x
+  "Avenue by Day to Dubai Are": "Avenue Day Dubai Are"  # US, 1x
+  "West Zone Express Mart Dubai Are": "WestEnd Express Dubai Are"  # US, 1x
+  "Nespresso": "Espresso Pod Co"            # US, 4x
+
+  # Carburant et essence --------------------------------------------
+  "Petro-Canada": "Maple Fuel"              # US, 7x
+  "Couche-Tard": "Night Owl Mart"           # US, 1x
+  "Costco Essence": "WholesaleFuel"         # US, 1x
+  "Fastrac": "Speedy Stop"                  # US, 4x
+  "Adnoc Distribution Abudhabi Are": "Desert Oil Distribution Abudhabi Are"  # Multi, 1x
+
+  # Stationnement ---------------------------------------------------
+  "SPAQ": "ParkSlot"                        # US, 14x
+  "Spaq St Laurent Ant": "ParkSlot St Laurent Ant"   # US, 1x
+  "Indigo": "BlueLot"                       # US, 1x
+  "Autoparc Stanley": "Stanley Park Lot"    # US, 1x
+  "Agence de mobilite durable Montreal": "Sustainable Mobility Agency Montreal"  # US, 2x
+  "St Denis": "St Denis Lot"                # US, 1x
+
+  # Magasinage / retail ---------------------------------------------
+  "Amazon": "Selangor Mart"                 # Malais (Selangor = etat), 27x
+  "Amazon Prime Membership": "Selangor Prime Membership"  # Malais, 10x
+  "Amazon Web Services": "Selangor Cloud Services"   # Malais, 1x
+  "Walmart": "Mega Bazaar"                  # Multi (bazaar), 1x
+  "Canadian Tire": "Northern Hardware"      # CA-themed, 2x
+  "Dollarama": "PennyMart"                  # US, 1x
+  "Temu": "Pasaron"                         # Malais (pasaran = marche), 2x
+  "Winners": "Champion Outlet"              # US, 2x
+  "Gradco Ca": "Sumber Apparel Ca"          # Malais (sumber = source), 1x
+  "Maison Baultberri": "Sportback Studio"   # US, 1x
+  "Dubai Duty Free Are": "Free Zone Dubai Are"       # US, 1x
+  "Er Dubai Are": "Aerial Dubai Are"        # US, 1x
+  "Maa Althahab for Gift Dubai Are": "Golden Gifts Dubai Are"  # US, 1x
+
+  # Retail Tunisie ---------------------------------------------------
+  "Avolta Tunisie Sa Berges Du Lac Tun": "Lake Plaza Retail Tunis Tun"  # US, 1x
+  "Ste Tuntex Rue Z Tun": "Karahan Garments Tunis Tun"  # Turc (Karahan), 2x
+  "Mercure Retail Tunisia Lacoste Tunis Tun": "Karahan Boutique Tunis Tun"  # Turc, 1x
+
+  # Subscriptions / Tech / Software ----------------------------------
+  "Cursor": "Tahir AI"                      # Turc (Tahir = prenom), 17x
+  "Cursor Usage Mid May": "Tahir AI Usage Mid May"
+  "Cursor Usage Mid Apr": "Tahir AI Usage Mid Apr"
+  "Cursor Usage Mid Mar": "Tahir AI Usage Mid Mar"
+  "Cursor Usage Mid Feb": "Tahir AI Usage Mid Feb"
+  "Cursor Usage Mid Jan": "Tahir AI Usage Mid Jan"
+  "Cursor Usage Mid Dec": "Tahir AI Usage Mid Dec"
+  "Cursor Usage Mid Nov": "Tahir AI Usage Mid Nov"
+  "Cursor Usage Mid Oct": "Tahir AI Usage Mid Oct"
+  "Cursor Usage Mid Sep": "Tahir AI Usage Mid Sep"
+  "Cursor Usage Mid Aug": "Tahir AI Usage Mid Aug"
+  "Cursor Usage Mid Jul": "Tahir AI Usage Mid Jul"
+  "Cursor Usage Mid Jun": "Tahir AI Usage Mid Jun"
+  "Cursor Usage May": "Tahir AI Usage May"
+  "Cursor Usage Apr": "Tahir AI Usage Apr"
+  "Cursor Usage Mar": "Tahir AI Usage Mar"
+  "Cursor Usage Feb": "Tahir AI Usage Feb"
+  "Cursor Usage Jan": "Tahir AI Usage Jan"
+  "Cursor Usage Dec": "Tahir AI Usage Dec"
+  "Cursor Usage Nov": "Tahir AI Usage Nov"
+  "Cursor Usage Sep": "Tahir AI Usage Sep"
+  "Cursor Usage Aug": "Tahir AI Usage Aug"
+  "Cursor Usage Jul": "Tahir AI Usage Jul"
+  "Cursor Usage Jun": "Tahir AI Usage Jun"
+
+  "Vercel Inc": "DeployHub Inc"             # US, 7x
+  "Vercel Domains": "DeployHub Domains"     # US, 21x
+  "OpenAI": "PerakAI"                       # Malais (Perak = etat), 17x
+  "Google Workspace": "Workspace One"       # US, 12x
+  "Google Data Transfer": "DataMove Transfer"  # US, 1x
+  "YouTube": "ClipStream"                   # US, 2x
+  "Facebook": "ConnectBook"                 # US, 1x
+  "Apple": "Mavi Tech"                      # Turc (mavi = bleu), 6x
+  "Netflix": "StreamKite"                   # US, 10x
+  "Github.com": "RepoHub.com"               # US, 4x
+  "Overleaf Editor": "TexCloud Editor"      # US, 4x
+  "Overleaf Trial Over": "TexCloud Trial Over"  # US, 1x
+  "Canva": "DesignKit"                      # US, 3x
+  "Paddle": "Boardly"                       # US, 1x
+  "Runway Pro Plan": "Mavi Studio Pro Plan"  # Turc, 1x
+  "Memberstack": "MemberKit"                # US, 2x
+  "Payoneer.com": "Payforge.com"            # US, 1x
+  "The Mobile Locker": "Pocket Vault Pro"   # US, 1x
+  "Edas Conf Ieee Icecs": "TechConf Ieee Icecs"  # US, 1x
+  "Ieee Products & Service": "IEEE Tech Service"  # US, 1x
+  "Thinkific.com": "Learnify.com"           # US, 2x
+  "Udemy.com": "SkillBay.com"               # US, 4x
+  "Bemotion Technologie": "MotionCraft Tech"  # US, 1x
+  "Internet Downl Manager Abu Dhabi Are": "Speed Downloader Abu Dhabi Are"  # US, 1x
+  "Profix Mobile": "FixIt Mobile"           # US, 1x
+
+  # Telecom / Internet ----------------------------------------------
+  "Videotron": "FibreLynx"                  # US, 11x
+  "Virgin Plus": "Stellar Plus"             # US, 3x
+  "Virgin Mobile": "Stellar Mobile"         # US, 2x
+  "Uzr Omds Garching Hoch Deu": "Munich Hosting Garching Deu"  # Multi, 3x
+
+  # Transport ------------------------------------------------------
+  "Uber": "RideHail"                        # US, 10x
+  "Uber Eats": "Sedap Eats"                 # Malais (sedap = delicieux), 55x
+  "Uber Trip": "RideHail Trip"              # US, 1x
+  "Cars Taxi Services Co Dubai Are": "City Taxi Services Dubai Are"  # US, 1x
+  "Hamza": "Hamza Taxi"                     # kept (already a fictional-sounding personal name), 1x
+  "WestJet Airlines": "Maple Airways"       # CA-themed, 1x
+  "American Airlines": "Patriot Airways"    # US, 1x
+  "Ca Fra": "Pearl Aviation Fra"            # Multi, 1x
+
+  # Travel / Hotel / Tourism ---------------------------------------
+  "Expedia": "TripScout"                    # US, 1x
+  "Get Your Guide": "GuideMate"             # US, 2x
+  "Nexus Tours": "Compass Tours"            # US, 1x
+  "Trailways.com": "BackRoute.com"          # US, 1x
+  "Riu Dunamar Mu Isla Mujeres Mex": "Coral Bay Resort Isla Mujeres Mex"  # US, 1x
+  "Embassy Suites": "Diplomat Suites"       # US, 1x
+  "Yoush Jet Ski Rental Dubai Are": "Wave Riders Dubai Are"  # US, 1x
+  "Sky Dive Dubai Are": "SkyHigh Dubai Are"  # US, 1x
+  "Ifly Montreal": "Skytopia Montreal"      # US, 1x
+  "Ifly": "Skytopia"                        # US, 1x
+  "Ticketmaster": "TicketWave"              # US, 1x
+
+  # Salon de coiffure ----------------------------------------------
+  "Hair Anatomy Studio Markham": "Crown Studio Markham"  # US, 2x
+
+  # Health ---------------------------------------------------------
+  "Bonjour-Sante": "MedBonjour"             # Multi, 8x
+  "Jean Coutu": "PharmaQuik"                # US, 1x
+  "Clearly": "VisionClear"                  # US, 1x
+
+  # Sports / fitness -----------------------------------------------
+  "Econofitness": "FlexFit"                 # US, 3x
+
+  # Renovations ----------------------------------------------------
+  "RONA": "ToolHaus"                        # Multi, 1x
+  "Neoclimat": "ClimaTech Pro"              # US, 1x
+
+  # Legal / juridical ----------------------------------------------
+  "Shamayev Business Law": "Korkut & Partners Law"   # Turc (Korkut), 1x
+
+  # Misc ----------------------------------------------------------
+  "Nayax": "QuickPay"                       # US, 23x
+  "Depotium": "Storeville"                  # US, 5x
+  "Depotium Pte Aux": "Storeville Pte Aux"  # US, 13x
+
+  # System / account events (just accent corrections, kept generic) -
+  "Paiement recu merci!": "Paiement reçu merci!"
+  "Interets Mastercard": "Intérêts Mastercard"
+  "Constat D'infraction": "Constat d'infraction"
+  # 'Programme remise en argent' : aucun accent a ajouter, reste tel quel
+  # 'Avance de fonds' : aucun accent a ajouter, reste tel quel
