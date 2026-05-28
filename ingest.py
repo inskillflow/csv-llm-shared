@@ -1,7 +1,7 @@
 """ingest.py — lecture multi-format de fichiers CSV de carte de crédit.
 
 Le format `data1-anonymized.csv` est :
-    Date;Numéro de Carte;Description;Catégorie;Debit;Credit
+    Date;Card Number;Description;Category;Debit;Credit
     2027-12-27;************4382;Late Payment Fee;Fees;24.31;0
 
 Mais les exports bancaires varient :
