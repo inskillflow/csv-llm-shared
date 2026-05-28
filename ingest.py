@@ -2,7 +2,7 @@
 
 Le format `data1-anonymized.csv` est :
     Date;Numéro de Carte;Description;Catégorie;Debit;Credit
-    2026-05-24;************8528;Tahir AI Usage Mid May;Électroniques et logiciels;151.18;0
+    2027-12-27;************4382;Late Payment Fee;Fees;24.31;0
 
 Mais les exports bancaires varient :
 - séparateur `;` ou `,`

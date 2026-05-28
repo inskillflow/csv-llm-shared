@@ -43,7 +43,7 @@ def main() -> int:
     db.init(db_path)
     n = db.insert_dataframe(df, db_path, profile="verify")
 
-    assert n == 733, f"Attendu 733 lignes, obtenu {n}"
+    assert n == 734, f"Attendu 734 lignes, obtenu {n}"
 
     total_df = db.safe_query(
         "SELECT ROUND(SUM(amount), 2) AS s FROM transactions WHERE amount > 0",
@@ -52,15 +52,15 @@ def main() -> int:
     total = float(total_df.iloc[0]["s"])
     print(f"Lignes en DB : {n}")
     print(f"Total dépenses (amount>0) : {total} $")
-    assert abs(total - 43567.04) < 0.01, f"Total dépense inattendu : {total}"
+    assert abs(total - 118667.69) < 0.01, f"Total dépense inattendu : {total}"
 
     cg_df = db.safe_query(
-        "SELECT COUNT(*) AS n FROM transactions WHERE description = 'Coffee Gossip'",
+        "SELECT COUNT(*) AS n FROM transactions WHERE description = 'Coastal Spoon Cafe'",
         db_path,
     )
     cg = int(cg_df.iloc[0]["n"])
-    print(f"Coffee Gossip : {cg} occurrences")
-    assert cg == 106, f"Attendu 106, obtenu {cg}"
+    print(f"Coastal Spoon Cafe : {cg} occurrences")
+    assert cg == 19, f"Attendu 19, obtenu {cg}"
 
     cats_df = db.safe_query(
         "SELECT COUNT(DISTINCT category) AS n FROM transactions",
@@ -68,7 +68,7 @@ def main() -> int:
     )
     n_cats = int(cats_df.iloc[0]["n"])
     print(f"Catégories distinctes : {n_cats}")
-    assert n_cats >= 30, f"Trop peu de catégories : {n_cats}"
+    assert n_cats == 13, f"Nombre de catégories inattendu : {n_cats}"
 
     print("OK")
     return 0
